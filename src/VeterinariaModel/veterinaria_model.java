@@ -21,4 +21,7 @@ public class veterinaria_model {
         this.edad=edad;
         this.propietario=propietario;
     }
+    public int getId(){
+        return id;
+    }
 }
