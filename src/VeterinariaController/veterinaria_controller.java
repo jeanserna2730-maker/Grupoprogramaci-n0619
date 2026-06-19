@@ -2,41 +2,165 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package VeterinariaController;
-import java.util.ArrayList;
-import VeterinariaModel.veterinaria_model;
-
-/**
- *
- * @author Usuario
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+package VeterinariaController;
+import java.util.HashMap;
+import java.util.ArrayList;
+import VeterinariaModel.mascota_model;
+import VeterinariaModel.veterinario_model;
+import VeterinariaModel.cita_model;
+
 public class veterinaria_controller {
-    public ArrayList<veterinaria_model> listaVeterinaria = new ArrayList<>();
-    
-    //Ageragar
-    public void agregar(veterinaria_model mascota){
-        listaVeterinaria.add(mascota);
-        
+
+    //HASHMAP para mascotas (clave = codigo)
+    public HashMap<Integer, mascota_model> mapaMascotas = new HashMap<>();
+
+    //ARRAYLIST para veterinarios
+    public ArrayList<veterinario_model> listaVeterinarios = new ArrayList<>();
+
+    //ARRAYLIST para citas
+    public ArrayList<cita_model> listaCitas = new ArrayList<>();
+
+    // ---------------- MASCOTAS (HashMap) ----------------
+
+    //agregar o crear
+    public void agregarMascota(mascota_model mascota){
+        mapaMascotas.put(mascota.getCodigo(), mascota);
+        System.out.println("Mascota agregada");
     }
-    //Buscar
-    public veterinaria_model buscarPorId(int id){
-        for(veterinaria_model m : listaVeterinaria){
-            if(m.getId()==  id){
-                return m;
+
+    //listar o mostrar
+    public void listarMascotas(){
+        for(mascota_model mascota: mapaMascotas.values()){
+            System.out.println(mascota);
+        }
+    }
+
+    //buscar mascota
+    public mascota_model buscarMascota(int codigo){
+        return mapaMascotas.get(codigo);
+    }
+
+    //eliminar y borrar
+    public boolean eliminarMascota(int codigo){
+        if (mapaMascotas.containsKey(codigo)){
+            mapaMascotas.remove(codigo);
+            return true;
+        }
+        return false;
+    }
+
+    //actualizar
+    public boolean actualizarMascota(int codigo, String nombre, String especie, String raza, int edad, String dueño){
+        mascota_model mascota = buscarMascota(codigo);
+        if(mascota != null){
+            mascota.setNombre(nombre);
+            mascota.setEspecie(especie);
+            mascota.setRaza(raza);
+            mascota.setEdad(edad);
+            mascota.setDueño(dueño);
+            return true;
+        }
+        return false;
+    }
+
+    // ---------------- VETERINARIOS (ArrayList) ----------------
+
+    //agregar o crear
+    public void agregarVeterinario(veterinario_model veterinario){
+        listaVeterinarios.add(veterinario);
+        System.out.println("Veterinario agregado");
+    }
+
+    //listar o mostrar
+    public void listarVeterinarios(){
+        for(veterinario_model veterinario: listaVeterinarios){
+            System.out.println(veterinario);
+        }
+    }
+
+    //buscar veterinario
+    public veterinario_model buscarVeterinario(int codigo){
+        for(veterinario_model veterinario : listaVeterinarios){
+            if (veterinario.getCodigo()==codigo){
+                return veterinario;
             }
         }
         return null;
     }
-    //Listar 
-    public void listarTodos(){
-        if(listaVeterinaria.isEmpty()){
-            System.out.println("no hay mascotas registradas");
-            return;
+
+    //eliminar y borrar
+    public boolean eliminarVeterinario(int codigo){
+        veterinario_model veterinario= buscarVeterinario(codigo);
+        if (veterinario != null){
+            listaVeterinarios.remove(veterinario);
+            return true;
         }
-        for(veterinaria_model m : listaVeterinaria){
-            System.out.println(m);
+        return false;
+    }
+
+    //actualizar
+    public boolean actualizarVeterinario(int codigo, String nombre, String especialidad){
+        veterinario_model veterinario = buscarVeterinario(codigo);
+        if(veterinario != null){
+            veterinario.setNombre(nombre);
+            veterinario.setEspecialidad(especialidad);
+            return true;
+        }
+        return false;
+    }
+
+    // ---------------- CITAS (ArrayList) ----------------
+
+    //agregar o crear
+    public void agregarCita(cita_model cita){
+        //validamos que exista la mascota y el veterinario antes de agendar
+        if (mapaMascotas.containsKey(cita.getCodigoMascota()) && buscarVeterinario(cita.getCodigoVeterinario())!=null){
+            listaCitas.add(cita);
+            System.out.println("Cita agendada");
+        } else {
+            System.out.println("No existe la mascota o el veterinario indicado");
         }
     }
-    //Actualizar
-    
+
+    //listar o mostrar
+    public void listarCitas(){
+        for(cita_model cita: listaCitas){
+            System.out.println(cita);
+        }
+    }
+
+    //buscar cita
+    public cita_model buscarCita(int codigo){
+        for(cita_model cita : listaCitas){
+            if (cita.getCodigo()==codigo){
+                return cita;
+            }
+        }
+        return null;
+    }
+
+    //eliminar y borrar
+    public boolean eliminarCita(int codigo){
+        cita_model cita= buscarCita(codigo);
+        if (cita != null){
+            listaCitas.remove(cita);
+            return true;
+        }
+        return false;
+    }
+
+    //actualizar
+    public boolean actualizarCita(int codigo, String fecha, String motivo){
+        cita_model cita = buscarCita(codigo);
+        if(cita != null){
+            cita.setFecha(fecha);
+            cita.setMotivo(motivo);
+            return true;
+        }
+        return false;
+    }
 }
