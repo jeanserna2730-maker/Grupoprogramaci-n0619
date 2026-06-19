@@ -26,5 +26,8 @@ public class veterinaria_controller {
         }
         return null;
     }
-    
+    //Listar 
+    public void listarTodos(){
+        
+    }
 }
