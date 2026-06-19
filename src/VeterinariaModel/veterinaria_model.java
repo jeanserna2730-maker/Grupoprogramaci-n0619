@@ -33,4 +33,7 @@ public class veterinaria_model {
     public int getEdad(){
         return edad;
     }
+    public String getPropietario(){
+        return propietario;
+    }
 }
