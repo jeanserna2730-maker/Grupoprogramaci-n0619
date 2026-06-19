@@ -36,4 +36,8 @@ public class veterinaria_model {
     public String getPropietario(){
         return propietario;
     }
+    @Override
+    public String toString(){
+        
+    }
 }
