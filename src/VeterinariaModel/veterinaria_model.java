@@ -9,5 +9,9 @@ package VeterinariaModel;
  * @author HP
  */
 public class veterinaria_model {
-    
+    public int id;
+    public String nombre;
+    public String especie;
+    public int edad;
+    public String propietario;
 }
