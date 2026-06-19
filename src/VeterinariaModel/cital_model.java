@@ -66,3 +66,18 @@ public class cital_model {
         this.fecha= fecha;
     }
    
+   public void setMotivo(String motivo){
+        this.motivo= motivo;
+    }
+ 
+    @Override
+    //mostrar cita
+        public String toString(){
+            return "codigo cita: "+codigo
+            +" codigo mascota: "+ codigoMascota
+            +" codigo veterinario: "+ codigoVeterinario
+            +" fecha: "+ fecha
+            +" motivo: "+ motivo;
+        }
+}
+ 
