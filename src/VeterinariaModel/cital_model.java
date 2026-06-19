@@ -53,3 +53,8 @@ public class cital_model {
     public void setCodigo(int codigo){
         this.codigo= codigo;
     }
+    
+  public void setCodigoMascota(int codigoMascota){
+        this.codigoMascota= codigoMascota;
+    }
+  
