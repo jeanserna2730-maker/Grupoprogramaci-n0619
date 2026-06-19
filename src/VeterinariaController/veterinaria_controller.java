@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package VeterinariaController;
-import java.util.ArraysList;
+import java.util.ArrayList;
 import VeterinariaModel.veterinaria_model;
 
 /**
@@ -11,6 +11,6 @@ import VeterinariaModel.veterinaria_model;
  * @author Usuario
  */
 public class veterinaria_controller {
-    
+    public ArrayList<veterinaria_model> listaVeterinaria = new ArrayList<>();
     
 }
