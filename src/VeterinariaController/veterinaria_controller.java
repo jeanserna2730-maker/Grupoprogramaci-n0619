@@ -13,11 +13,12 @@ import VeterinariaModel.veterinaria_model;
 public class veterinaria_controller {
     public ArrayList<veterinaria_model> listaVeterinaria = new ArrayList<>();
     
-    //Agregar
-    public void agregar(veterinaria_model mascotas){
+    //Ageragar
+    public void agregar(veterinaria_model mascota){
+        listaVeterinaria.add(mascota);
         
     }
-    //Agregar
+    //Buscar
     public veterinaria_model buscarPorId(int id){
         for(veterinaria_model m : listaVeterinaria){
             if(m.getId()==  id){
@@ -30,7 +31,12 @@ public class veterinaria_controller {
     public void listarTodos(){
         if(listaVeterinaria.isEmpty()){
             System.out.println("no hay mascotas registradas");
-            
+            return;
+        }
+        for(veterinaria_model m : listaVeterinaria){
+            System.out.println(m);
         }
     }
+    //Actualizar
+    
 }
