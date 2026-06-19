@@ -76,7 +76,7 @@ public class mascota_model {
     }
 
     @Override
-    //mostrar mascota
+   //mostrar mascota
         public String toString(){
             return "codigo: "+codigo
             +" nombre: "+ nombre
