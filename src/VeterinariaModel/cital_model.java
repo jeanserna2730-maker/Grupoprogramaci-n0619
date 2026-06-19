@@ -58,3 +58,7 @@ public class cital_model {
         this.codigoMascota= codigoMascota;
     }
   
+   public void setCodigoVeterinario(int codigoVeterinario){
+        this.codigoVeterinario= codigoVeterinario;
+    }
+   
