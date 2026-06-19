@@ -37,3 +37,10 @@ public class cital_model {
         return codigoMascota;
     }
  
+   public int getCodigoVeterinario(){
+        return codigoVeterinario;
+    }
+ 
+    public String getFecha(){
+        return fecha;
+    }
