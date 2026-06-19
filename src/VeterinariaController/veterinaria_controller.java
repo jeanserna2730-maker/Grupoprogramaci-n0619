@@ -29,6 +29,7 @@ public class veterinaria_controller {
     //Listar 
     public void listarTodos(){
         if(listaVeterinaria.isEmpty()){
+            System.out.println("no hay mascotas registradas");
             
         }
     }
