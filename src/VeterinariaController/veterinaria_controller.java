@@ -10,7 +10,7 @@ package VeterinariaController;
 import java.util.HashMap;
 import java.util.ArrayList;
 import VeterinariaModel.mascota_model;
-import VeterinariaModel.veterinario_model;
+import VeterinariaModel.veterinaria_model;
 import VeterinariaModel.cita_model;
 
 public class veterinaria_controller {
@@ -19,7 +19,7 @@ public class veterinaria_controller {
     public HashMap<Integer, mascota_model> mapaMascotas = new HashMap<>();
 
     //ARRAYLIST para veterinarios
-    public ArrayList<veterinario_model> listaVeterinarios = new ArrayList<>();
+    public ArrayList<veterinaria_model> listaVeterinarios = new ArrayList<>();
 
     //ARRAYLIST para citas
     public ArrayList<cita_model> listaCitas = new ArrayList<>();
@@ -70,21 +70,21 @@ public class veterinaria_controller {
     // ---------------- VETERINARIOS (ArrayList) ----------------
 
     //agregar o crear
-    public void agregarVeterinario(veterinario_model veterinario){
+    public void agregarVeterinario(veterinaria_model veterinario){
         listaVeterinarios.add(veterinario);
         System.out.println("Veterinario agregado");
     }
 
     //listar o mostrar
     public void listarVeterinarios(){
-        for(veterinario_model veterinario: listaVeterinarios){
+        for(veterinaria_model veterinario: listaVeterinarios){
             System.out.println(veterinario);
         }
     }
 
     //buscar veterinario
-    public veterinario_model buscarVeterinario(int codigo){
-        for(veterinario_model veterinario : listaVeterinarios){
+    public veterinaria_model buscarVeterinario(int codigo){
+        for(veterinaria_model veterinario : listaVeterinarios){
             if (veterinario.getCodigo()==codigo){
                 return veterinario;
             }
@@ -94,7 +94,7 @@ public class veterinaria_controller {
 
     //eliminar y borrar
     public boolean eliminarVeterinario(int codigo){
-        veterinario_model veterinario= buscarVeterinario(codigo);
+        veterinaria_model veterinario= buscarVeterinario(codigo);
         if (veterinario != null){
             listaVeterinarios.remove(veterinario);
             return true;
@@ -104,7 +104,7 @@ public class veterinaria_controller {
 
     //actualizar
     public boolean actualizarVeterinario(int codigo, String nombre, String especialidad){
-        veterinario_model veterinario = buscarVeterinario(codigo);
+        veterinaria_model veterinario = buscarVeterinario(codigo);
         if(veterinario != null){
             veterinario.setNombre(nombre);
             veterinario.setEspecialidad(especialidad);

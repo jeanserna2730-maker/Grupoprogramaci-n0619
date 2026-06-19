@@ -2,46 +2,54 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package VeterinariaModel;
-
-/**
- *
- * @author HP
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-public class veterinaria_model {
-    public int id;
+package VeterinariaModel;
+public class veterinario_model {
+    public int codigo;
     public String nombre;
-    public String especie;
-    public int edad;
-    public String propietario;
-    public veterinaria_model(int id, String nombre, String especie, int edad, String propietario){
-        this.id=id;
-        this.nombre=nombre;
-        this.especie=especie;
-        this.edad=edad;
-        this.propietario=propietario;
+    public String especialidad;
+
+    //CONSTRUCTOR
+
+    public veterinario_model(int codigo, String nombre, String especialidad){
+        this.codigo= codigo;
+        this.nombre= nombre;
+        this.especialidad= especialidad;
     }
-    public int getId(){
-        return id;
+    //metodos get y set
+
+    public int getCodigo(){
+        return codigo;
     }
+
     public String getNombre(){
         return nombre;
     }
-    public String getEspecie(){
-        return especie;
+
+    public String getEspecialidad(){
+        return especialidad;
     }
-    public int getEdad(){
-        return edad;
+    //setters
+    public void setCodigo(int codigo){
+        this.codigo= codigo;
     }
-    public String getPropietario(){
-        return propietario;
+
+    public void setNombre(String nombre){
+        this.nombre= nombre;
     }
+
+    public void setEspecialidad(String especialidad){
+        this.especialidad= especialidad;
+    }
+
     @Override
-    public String toString(){
-        return "id "+id
-                + "nombre "+nombre
-                + "especie "+especie
-                + "edad "+edad
-                + "propietario "+propietario;
-    }
+    //mostrar veterinario
+        public String toString(){
+            return "codigo: "+codigo
+            +" nombre: "+ nombre
+            +" especialidad: "+ especialidad;
+        }
 }
