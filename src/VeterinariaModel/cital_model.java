@@ -62,3 +62,7 @@ public class cital_model {
         this.codigoVeterinario= codigoVeterinario;
     }
    
+   public void setFecha(String fecha){
+        this.fecha= fecha;
+    }
+   
