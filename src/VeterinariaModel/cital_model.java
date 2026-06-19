@@ -48,3 +48,8 @@ public class cital_model {
    public String getMotivo(){
         return motivo;
     }
+   
+   //setters
+    public void setCodigo(int codigo){
+        this.codigo= codigo;
+    }
