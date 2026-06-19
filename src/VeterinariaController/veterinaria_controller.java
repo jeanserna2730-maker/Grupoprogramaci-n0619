@@ -13,4 +13,13 @@ import VeterinariaModel.veterinaria_model;
 public class veterinaria_controller {
     public ArrayList<veterinaria_model> listaVeterinaria = new ArrayList<>();
     
+    //Agregar
+    public veterinaria_model buscarPorId(int id){
+        for(veterinaria_model m : listaVeterinaria){
+            if(m.getId()==  id){
+                return m;
+            }
+        }
+    }
+    
 }
