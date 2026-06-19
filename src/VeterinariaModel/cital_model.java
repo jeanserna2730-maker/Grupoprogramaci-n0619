@@ -26,3 +26,14 @@ public class cital_model {
         this.fecha= fecha;
         this.motivo= motivo;
     }
+    
+   //metodos get y set
+ 
+    public int getCodigo(){
+        return codigo;
+    }
+ 
+    public int getCodigoMascota(){
+        return codigoMascota;
+    }
+ 
