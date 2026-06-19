@@ -30,4 +30,7 @@ public class veterinaria_model {
     public String getEspecie(){
         return especie;
     }
+    public int getEdad(){
+        return edad;
+    }
 }
