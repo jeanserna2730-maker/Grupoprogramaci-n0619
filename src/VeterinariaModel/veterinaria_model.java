@@ -2,19 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package VeterinariaModel;
-public class veterinario_model {
+public class veterinaria_model {
     public int codigo;
     public String nombre;
     public String especialidad;
 
     //CONSTRUCTOR
 
-    public veterinario_model(int codigo, String nombre, String especialidad){
+    public veterinaria_model(int codigo, String nombre, String especialidad){
         this.codigo= codigo;
         this.nombre= nombre;
         this.especialidad= especialidad;

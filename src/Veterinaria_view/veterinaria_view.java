@@ -7,8 +7,8 @@ package Veterinaria_view;
 import java.util.Scanner;
 import VeterinariaController.veterinaria_controller;
 import VeterinariaModel.mascota_model;
-import VeterinariaModel.veterinario_model;
-import VeterinariaModel.cita_model;
+import VeterinariaModel.veterinaria_model;
+import VeterinariaModel.cital_model;
 
 public class veterinaria_view {
     Scanner sc = new Scanner(System.in);
@@ -159,7 +159,7 @@ public class veterinaria_view {
                     System.out.print("Especialidad: ");
                     String especialidad = sc.nextLine();
 
-                    veterinario_model veterinario = new veterinario_model(codigo, nombre, especialidad);
+                    veterinaria_model veterinario = new veterinaria_model(codigo, nombre, especialidad);
                     controlador.agregarVeterinario(veterinario);
                     break;
 
@@ -234,7 +234,7 @@ public class veterinaria_view {
                     System.out.print("Motivo: ");
                     String motivo = sc.nextLine();
 
-                    cita_model cita = new cita_model(codigo, codigoMascota, codigoVeterinario, fecha, motivo);
+                    cital_model cita = new cital_model(codigo, codigoMascota, codigoVeterinario, fecha, motivo);
                     controlador.agregarCita(cita);
                     break;
 

@@ -2,16 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package VeterinariaController;
 import java.util.HashMap;
 import java.util.ArrayList;
 import VeterinariaModel.mascota_model;
 import VeterinariaModel.veterinaria_model;
-import VeterinariaModel.cita_model;
+import VeterinariaModel.cital_model;
 
 public class veterinaria_controller {
 
@@ -22,7 +18,7 @@ public class veterinaria_controller {
     public ArrayList<veterinaria_model> listaVeterinarios = new ArrayList<>();
 
     //ARRAYLIST para citas
-    public ArrayList<cita_model> listaCitas = new ArrayList<>();
+    public ArrayList<cital_model> listaCitas = new ArrayList<>();
 
     // ---------------- MASCOTAS (HashMap) ----------------
 
@@ -116,7 +112,7 @@ public class veterinaria_controller {
     // ---------------- CITAS (ArrayList) ----------------
 
     //agregar o crear
-    public void agregarCita(cita_model cita){
+    public void agregarCita(cital_model cita){
         //validamos que exista la mascota y el veterinario antes de agendar
         if (mapaMascotas.containsKey(cita.getCodigoMascota()) && buscarVeterinario(cita.getCodigoVeterinario())!=null){
             listaCitas.add(cita);
@@ -128,14 +124,14 @@ public class veterinaria_controller {
 
     //listar o mostrar
     public void listarCitas(){
-        for(cita_model cita: listaCitas){
+        for(cital_model cita: listaCitas){
             System.out.println(cita);
         }
     }
 
     //buscar cita
-    public cita_model buscarCita(int codigo){
-        for(cita_model cita : listaCitas){
+    public cital_model buscarCita(int codigo){
+        for(cital_model cita : listaCitas){
             if (cita.getCodigo()==codigo){
                 return cita;
             }
@@ -145,7 +141,7 @@ public class veterinaria_controller {
 
     //eliminar y borrar
     public boolean eliminarCita(int codigo){
-        cita_model cita= buscarCita(codigo);
+        cital_model cita= buscarCita(codigo);
         if (cita != null){
             listaCitas.remove(cita);
             return true;
@@ -155,7 +151,7 @@ public class veterinaria_controller {
 
     //actualizar
     public boolean actualizarCita(int codigo, String fecha, String motivo){
-        cita_model cita = buscarCita(codigo);
+        cital_model cita = buscarCita(codigo);
         if(cita != null){
             cita.setFecha(fecha);
             cita.setMotivo(motivo);
