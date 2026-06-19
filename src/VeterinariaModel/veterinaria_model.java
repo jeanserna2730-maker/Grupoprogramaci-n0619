@@ -38,6 +38,10 @@ public class veterinaria_model {
     }
     @Override
     public String toString(){
-        
+        return "id "+id
+                + "nombre "+nombre
+                + "especie "+especie
+                + "edad "+edad
+                + "propietario "+propietario;
     }
 }
