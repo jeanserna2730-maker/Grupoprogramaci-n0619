@@ -14,4 +14,11 @@ public class veterinaria_model {
     public String especie;
     public int edad;
     public String propietario;
+    public veterinaria_model(int id, String nombre, String especie, int edad, String propietario){
+        this.id=id;
+        this.nombre=nombre;
+        this.especie=especie;
+        this.edad=edad;
+        this.propietario=propietario;
+    }
 }
