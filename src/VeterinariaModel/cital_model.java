@@ -44,3 +44,7 @@ public class cital_model {
     public String getFecha(){
         return fecha;
     }
+    
+   public String getMotivo(){
+        return motivo;
+    }
