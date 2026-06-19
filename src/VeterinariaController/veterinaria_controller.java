@@ -17,7 +17,7 @@ public class veterinaria_controller {
     public void agregar(veterinaria_model mascotas){
         
     }
-
+    //Agregar
     public veterinaria_model buscarPorId(int id){
         for(veterinaria_model m : listaVeterinaria){
             if(m.getId()==  id){
