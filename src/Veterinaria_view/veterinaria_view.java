@@ -204,4 +204,78 @@ public class veterinaria_view {
         }
     }
 
-   
+    // ---------------- SUBMENU CITAS ----------------
+    public void menuCitas() {
+        int opcion = -1;
+        while (opcion != 5) {
+            System.out.println("""
+                               -------------------------------------------------
+                                                CITAS
+                               1. AGENDAR
+                               2. MOSTRAR
+                               3. ACTUALIZAR
+                               4. ELIMINAR
+                               5. VOLVER
+                               SELECCIONE LA OPCION A REALIZAR:
+                               """);
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    System.out.print("Ingresa el codigo de la cita: ");
+                    int codigo = sc.nextInt();
+                    System.out.print("Codigo de la mascota: ");
+                    int codigoMascota = sc.nextInt();
+                    System.out.print("Codigo del veterinario: ");
+                    int codigoVeterinario = sc.nextInt();
+                    sc.nextLine();
+                    System.out.print("Fecha (dd/mm/aaaa): ");
+                    String fecha = sc.nextLine();
+                    System.out.print("Motivo: ");
+                    String motivo = sc.nextLine();
+
+                    cita_model cita = new cita_model(codigo, codigoMascota, codigoVeterinario, fecha, motivo);
+                    controlador.agregarCita(cita);
+                    break;
+
+                case 2:
+                    controlador.listarCitas();
+                    break;
+
+                case 3:
+                    System.out.print("Codigo de la cita a actualizar: ");
+                    int codigoAct = sc.nextInt();
+                    sc.nextLine();
+                    System.out.print("Nueva fecha: ");
+                    String fechaAct = sc.nextLine();
+                    System.out.print("Nuevo motivo: ");
+                    String motivoAct = sc.nextLine();
+
+                    if (controlador.actualizarCita(codigoAct, fechaAct, motivoAct)) {
+                        System.out.println("Cita actualizada exitosamente!");
+                    } else {
+                        System.out.println("Cita no encontrada!");
+                    }
+                    break;
+
+                case 4:
+                    System.out.print("Ingrese el codigo de la cita a eliminar: ");
+                    int codigoDel = sc.nextInt();
+                    sc.nextLine();
+
+                    if (controlador.eliminarCita(codigoDel)) {
+                        System.out.println("Cita eliminada con exito!");
+                    } else {
+                        System.out.println("Cita no encontrada!");
+                    }
+                    break;
+
+                case 5:
+                    break;
+
+                default:
+                    System.out.println("Opcion incorrecta, intente de nuevo.");
+            }
+        }
+    }
+}
